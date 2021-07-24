@@ -1,4 +1,4 @@
-.grow {
+/* .grow {
       flex-grow: 1;
     }
 .menuButton {
@@ -37,4 +37,19 @@
 .sectionMobile {
       display: 'flex';
     
-}
+} */
+
+.toolbar {
+      border-bottom: 1px solid black;
+    }
+.toolbarTitle {
+      flex: 1;
+    }
+.toolbarSecondary {
+      justify-content: 'space-between';
+      overflow-x: 'auto';
+    }
+.toolbarLink {
+      padding: 1px;
+      flex-shrink: 0;
+    }

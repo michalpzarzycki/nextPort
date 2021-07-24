@@ -1,47 +1,58 @@
-import styles from '../styles/Header.module.css';
-import AppBar from '@material-ui/core/AppBar';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
-import MenuIcon from '@material-ui/icons/Menu';
-import MailIcon from '@material-ui/icons/Mail';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import Link from '@material-ui/core/Link';
+import styles from '../styles/Header.module.css'
 
-const Header = (props: any) => {
+
+
+export default function Header({sections=[], title}: any) {
 
   return (
-    <div className={styles.grow}>
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton
-          edge="start"
-          className={styles.menuButton}
+    <React.Fragment>
+      <Toolbar className={styles.toolbar}>
+        <Button size="small">Subscribe</Button>
+        <Typography
+          component="h2"
+          variant="h5"
           color="inherit"
-          aria-label="open drawer"
+          align="center"
+          noWrap
+          className={styles.toolbarTitle}
         >
-          <MenuIcon />
-        </IconButton>
-        <Typography className={styles.title} variant="h6" noWrap>
-          Portfolio
+          {title}
         </Typography>
-        <div className={styles.grow} />
-        <div className={styles.sectionDesktop}>
-          <IconButton aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <IconButton aria-label="show 17 new notifications" color="inherit">
-            <Badge badgeContent={17} color="secondary">
-              <GitHubIcon />
-            </Badge>
-          </IconButton>
-        </div>
+        <IconButton>
+          <SearchIcon />
+        </IconButton>
+        <Button variant="outlined" size="small">
+          Sign up
+        </Button>
       </Toolbar>
-    </AppBar>
-  </div>
+      <Toolbar component="nav" variant="dense" className={styles.toolbarSecondary}>
+        {sections.map((section: any) => (
+          <Link
+            color="inherit"
+            noWrap
+            key={section.title}
+            variant="body2"
+            href={section.url}
+            className={styles.toolbarLink}
+          >
+            {section.title}
+          </Link>
+        ))}
+      </Toolbar>
+    </React.Fragment>
   );
 }
 
-export default Header;
+Header.propTypes = {
+  sections: PropTypes.array,
+  title: PropTypes.string,
+};
