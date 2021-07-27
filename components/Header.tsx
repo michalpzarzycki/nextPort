@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import * as React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import EmailIcon from '@material-ui/icons/Email';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import styles from '../styles/Header.module.css'
@@ -16,7 +16,7 @@ export default function Header({sections=[], title}: any) {
   return (
     <React.Fragment>
       <Toolbar className={styles.toolbar}>
-        <Button size="small">Subscribe</Button>
+        <Button size="small">HOME</Button>
         <Typography
           component="h2"
           variant="h5"
@@ -28,13 +28,13 @@ export default function Header({sections=[], title}: any) {
           {title}
         </Typography>
         <IconButton>
-          <SearchIcon />
+          <EmailIcon style={{color: "#3b49df"}}/>
         </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
+        <IconButton>
+          <GitHubIcon style={{color: "#3b49df"}}/>
+        </IconButton>
       </Toolbar>
-      <Toolbar component="nav" variant="dense" className={styles.toolbarSecondary}>
+      <Toolbar component="nav" variant="dense" className={styles.toolbarSecondary} style={{ justifyContent: 'space-between' }}>
         {sections.map((section: any) => (
           <Link
             color="inherit"
@@ -52,7 +52,3 @@ export default function Header({sections=[], title}: any) {
   );
 }
 
-Header.propTypes = {
-  sections: PropTypes.array,
-  title: PropTypes.string,
-};

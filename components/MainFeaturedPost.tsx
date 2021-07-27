@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+import Banner from './Banner';
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
@@ -40,12 +41,16 @@ export default function MainFeaturedPost(props: any) {
   const { post } = props;
 
   return (
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
+    <Paper className={classes.mainFeaturedPost} style={{ background: `black` }}>
       {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+      {/* {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />} */}
       <div className={classes.overlay} />
       <Grid container>
-        <Grid item md={6}>
+        <Grid item md={12}>
+        <Banner />
+        </Grid>
+       
+        {/* <Grid item md={6}>
           <div className={classes.mainFeaturedPostContent}>
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
               {post.title}
@@ -57,7 +62,7 @@ export default function MainFeaturedPost(props: any) {
               {post.linkText}
             </Link>
           </div>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Paper>
   );

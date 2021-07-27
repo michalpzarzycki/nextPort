@@ -1,0 +1,23 @@
+.mainDiv {
+    display: none;
+}
+.paths > * {
+    transform: scale(0.6);
+    animation: dash 5s ease-out forwards;
+
+}
+
+
+
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @media (min-width: 290px) {
+      .mainDiv {
+        display: block
+      }
+  }

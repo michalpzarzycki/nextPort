@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import ReactMarkdown from 'markdown-to-jsx'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
@@ -10,10 +9,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
-import Main from './Main';
-import Sidebar from './Sidebar';
 import Footer from './Footer';
-import { useState } from 'react';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,16 +19,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'JavaScript', url: '#' },
+  { title: 'React', url: '#' },
+  { title: 'NodeJS', url: '#' },
+  { title: 'ES6', url: '#' },
+  { title: 'CodeWars', url: '#' },
+  { title: 'CSS', url: '#' },
+  { title: 'dev.to', url: '#' },
 ];
 
 const mainFeaturedPost = {
@@ -46,6 +39,78 @@ const mainFeaturedPost = {
 
 
 const featuredPosts = [
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
   {
     title: 'Featured post',
     date: 'Nov 12',
@@ -108,7 +173,7 @@ export default function MainPage() {
               <FeaturedPost key={post.title} post={post} />
             ))}
           </Grid>
-          <Grid container spacing={5} className={classes.mainGrid}>
+          {/* <Grid container spacing={5} className={classes.mainGrid}>
             <Main title="From the firehose" posts={posts} />
             <Sidebar
               title={sidebar.title}
@@ -116,7 +181,7 @@ export default function MainPage() {
               archives={sidebar.archives}
               social={sidebar.social}
             />
-          </Grid>
+          </Grid> */}
         </main>
       </Container>
       <Footer title="Footer" description="Something here to give the footer a purpose!" />

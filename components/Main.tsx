@@ -35,7 +35,3 @@ console.log("POSTS", posts)
   );
 }
 
-Main.propTypes = {
-  posts: PropTypes.array,
-  title: PropTypes.string,
-}
